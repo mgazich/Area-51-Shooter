@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+		
     }
 
     public void TakeDamage(float damage)
@@ -32,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.fillAmount = health;
         if (currentHealth <= 0)      //If health goes to 0 or below, call GameOver in GameManager
         {
-            //GameOver
+            SceneManager.LoadScene("GameOver");//If health is put to zero, changes scene to GameOver
         }
     }
 
