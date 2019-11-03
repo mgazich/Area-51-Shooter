@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreAdder : MonoBehaviour
 {
-    public static float score;
+    public int score;
 
     Text text;
 

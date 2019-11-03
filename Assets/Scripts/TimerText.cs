@@ -6,21 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class TimerText : MonoBehaviour
 {
-	public static float minutes; //Allows minutes and seconds to be changed by outside code
-	public static float seconds;
-	
+	public float minutes; //Allows minutes and seconds to be changed by outside code
+	public float seconds;
+
 	Text text; //Start a text object called text
-	
+
     void Start()
     {
 		text = GetComponent<Text>();//Gets Text component from Timer object in scene
 		minutes = 0;
 		seconds = 45;//Initialize amount of time
     }
-	
+
 	void awake()
 	{
-		
+
 	}
 
     void Update()
