@@ -96,6 +96,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!50 &6624063406748410318
 Rigidbody2D:
   serializedVersion: 4
