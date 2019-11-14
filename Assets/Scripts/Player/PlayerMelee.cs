@@ -7,11 +7,13 @@ public class PlayerMelee : MonoBehaviour
         public GameObject attack; //for image
         public GameObject enemy; //player
         public GameObject weaponSwap;
+	public WeaponSwap WeaponGun;
         public float attackRange; //changeable range
         // Start is called before the first frame update
         void Start()
         {
-			weaponSwap =GameObject.Find("WeaponSwap");
+			weaponSwap = GameObject.Find("Player");
+			WeaponGun = weaponSwap.GetComponent<WeaponSwap>();
 			enemy = GameObject.Find("Enemy"); //find player
 			attack = GameObject.Find("PlayerMelee"); //find this
 			attackRange = 2; //range intitally 2
@@ -22,15 +24,16 @@ public class PlayerMelee : MonoBehaviour
         void Update()
         {	
 				//if distance < range
-			if(Input.GetKeyDown("space"))
+			if(Input.GetButton("Fire1") && WeaponGun.isStar == false)
 			{
 				StartCoroutine( ShowAndHide(attack, 0.5f) );	
 			}
     	}
-		IEnumerator ShowAndHide( GameObject go, float delay )
-		{
-			go.SetActive(true);
-			yield return new WaitForSeconds(delay);
-			go.SetActive(false);
-		 }
+    	//function to handle timing
+	IEnumerator ShowAndHide( GameObject go, float delay )
+	{
+		go.SetActive(true);
+		yield return new WaitForSeconds(delay);
+		go.SetActive(false);
+	 }
 }

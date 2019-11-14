@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class WeaponSwap : MonoBehaviour
 {
-    public Weapons weapon;
-    public enum Weapons{Ranged, Melee}
-    GameObject player;
+    public bool isStar; // bool to swap between melee and ranged
+
     // Start is called before the first frame update
     void Start()
     {
-        weapon = Weapons.Ranged;
+    	isStar = true; 
+    	
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Z)) // Z to swap
+        {
+        	swap();
+        }
     }
+    void swap(){
+    	isStar = !isStar;
+    }
+    
 }
