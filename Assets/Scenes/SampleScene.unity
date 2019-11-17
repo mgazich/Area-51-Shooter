@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 107285524}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66278,6 +66278,22 @@ MonoBehaviour:
   nextFire: 0
   gun: {fileID: 0}
   WeaponGun: {fileID: 0}
+--- !u!114 &520009637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520009634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9b1442b9d29b9469da7dcdf10ad9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextTeleport: 0
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!4 &520009642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7485026274071775570, guid: d32846b5c6e5d6f4e853c2e07e103dc6,
