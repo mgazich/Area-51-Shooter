@@ -259,12 +259,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44287811}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ba90cfcf9d234b4e9f0c8f4f00b23a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 0
+  damageAmount: 20
 --- !u!212 &44287815
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe01bf1f87fee9b499d723f33f6a0d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 3
 --- !u!4 &96018336 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6862054853525770198, guid: a30c18648f0e5d24392f1a2dc1e36a24,
@@ -66274,7 +66274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shuriken: {fileID: 6624063406748410317, guid: 4805ab24c06e3a243a52bc6f6dc9d807,
     type: 3}
-  shurikenSpeed: 2.5
+  shurikenSpeed: 15
   nextFire: 0
   gun: {fileID: 0}
   WeaponGun: {fileID: 0}
@@ -66313,7 +66313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1629372ddac76e846a1bea596c4fa8a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGun: 0
+  isStar: 0
 --- !u!1 &556667629
 GameObject:
   m_ObjectHideFlags: 0
@@ -67672,7 +67672,7 @@ GameObject:
   - component: {fileID: 1478544100}
   - component: {fileID: 1478544099}
   - component: {fileID: 1478544098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73776,6 +73776,11 @@ PrefabInstance:
       propertyPath: target
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6857443223252084075, guid: a30c18648f0e5d24392f1a2dc1e36a24,
+        type: 3}
+      propertyPath: damageAmount
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6857443221712807083, guid: a30c18648f0e5d24392f1a2dc1e36a24,
         type: 3}
       propertyPath: health
@@ -73857,7 +73862,7 @@ PrefabInstance:
       objectReference: {fileID: 592410235}
     - target: {fileID: 520009635, guid: d32846b5c6e5d6f4e853c2e07e103dc6, type: 3}
       propertyPath: maxHealth
-      value: 1e+15
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 386827816, guid: d32846b5c6e5d6f4e853c2e07e103dc6, type: 3}
       propertyPath: m_LocalPosition.y

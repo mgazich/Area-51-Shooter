@@ -15,7 +15,7 @@ public class ThrowShuriken : MonoBehaviour
     void Start()
     {
     	gun = GameObject.Find("Player");
-	WeaponGun = gun.GetComponent<WeaponSwap>();
+		WeaponGun = gun.GetComponent<WeaponSwap>();
     }
 
     // Update is called once per frame
@@ -35,7 +35,8 @@ public class ThrowShuriken : MonoBehaviour
 	{
 		GameObject shurikenInitial = Instantiate(shuriken, transform.position, Quaternion.Euler(new Vector2(0, 0)));
 		Rigidbody2D rb = shurikenInitial.GetComponent<Rigidbody2D>();
-		rb.velocity = new Vector2(shootDirection.x * shurikenSpeed, shootDirection.y * shurikenSpeed);
+		rb.velocity = new Vector2((shootDirection.x), (shootDirection.y)).normalized;
+		rb.velocity = rb.velocity * shurikenSpeed;
 		
 	}
 	
