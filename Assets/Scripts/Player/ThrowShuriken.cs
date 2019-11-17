@@ -9,13 +9,10 @@ public class ThrowShuriken : MonoBehaviour
 	private Vector3 shootDirection;
 	private float fireRate = .75f;
 	public float nextFire = 0f;
-	public GameObject gun;
-	public WeaponSwap WeaponGun;
     // Start is called before the first frame update
     void Start()
     {
-    	gun = GameObject.Find("Player");
-	WeaponGun = gun.GetComponent<WeaponSwap>();
+		
     }
 
     // Update is called once per frame
@@ -25,7 +22,7 @@ public class ThrowShuriken : MonoBehaviour
 		shootDirection.z = 0.0f;
 		shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
 		shootDirection = shootDirection-transform.position;
-        if (Input.GetButton ("Fire1") && Time.time > nextFire && WeaponGun.isStar == true)
+        if (Input.GetButton ("Fire1") && Time.time > nextFire)
 		{
 			nextFire = Time.time + fireRate;
 			shoot();
