@@ -15,21 +15,21 @@ public class ThrowShuriken : MonoBehaviour
     void Start()
     {
     	gun = GameObject.Find("Player");
-		WeaponGun = gun.GetComponent<WeaponSwap>();
+			WeaponGun = gun.GetComponent<WeaponSwap>();
     }
 
     // Update is called once per frame
     void Update()
     {
-		shootDirection = Input.mousePosition;
-		shootDirection.z = 0.0f;
-		shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
-		shootDirection = shootDirection-transform.position;
-        if (Input.GetButton ("Fire1") && Time.time > nextFire && WeaponGun.isStar == true)
-		{
-			nextFire = Time.time + fireRate;
-			shoot();
-		}
+			shootDirection = Input.mousePosition;
+			shootDirection.z = 0.0f;
+			shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+			shootDirection = shootDirection-transform.position;
+      if (Input.GetButton ("Fire1") && Time.time > nextFire && WeaponGun.isStar == true)
+			{
+				nextFire = Time.time + fireRate;
+				shoot();
+			}
     }
 	void shoot()
 	{
@@ -37,7 +37,7 @@ public class ThrowShuriken : MonoBehaviour
 		Rigidbody2D rb = shurikenInitial.GetComponent<Rigidbody2D>();
 		rb.velocity = new Vector2((shootDirection.x), (shootDirection.y)).normalized;
 		rb.velocity = rb.velocity * shurikenSpeed;
-		
+
 	}
-	
+
 }
