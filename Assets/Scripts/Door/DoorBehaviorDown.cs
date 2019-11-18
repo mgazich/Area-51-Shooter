@@ -6,7 +6,10 @@ using UnityEngine;
 public class DoorBehaviorDown : MonoBehaviour
 {
 	GameObject MainCamera;
-	
+	public bool locked = false;
+	public Sprite lockedSprite;
+	public Sprite openSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,17 +19,24 @@ public class DoorBehaviorDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+			if(locked)
+			{
+				this.GetComponent<SpriteRenderer>().sprite = lockedSprite;
+			}
+			else
+			{
+				this.GetComponent<SpriteRenderer>().sprite = openSprite;
+			}
     }
-	
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
-	
-		if(other.gameObject.name == "Player")
+
+		if(other.gameObject.name == "Player" && !locked)
 		{
 				other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y-12, 0);
 				MainCamera.transform.Translate(0,-26,0);
 		}
-	
+
 	}
 }
