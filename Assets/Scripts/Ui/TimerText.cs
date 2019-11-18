@@ -25,6 +25,11 @@ public class TimerText : MonoBehaviour
 
     void Update()
     {
+		if(seconds > 60)
+		{
+			minutes += 1;
+			seconds -= 60;
+		}
 		seconds -= Time.deltaTime;//Counts seconds down in framerate
 		string s = seconds.ToString("00");//Converts seconds from long float to 2 digit seconds(EG 44.54643 to 44)
 		if(s.Equals("-01"))//Checks if seconds is past 0, changes minutes down one and puts seconds back to 59

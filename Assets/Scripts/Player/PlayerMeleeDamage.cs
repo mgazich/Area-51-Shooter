@@ -21,7 +21,6 @@ public class PlayerMeleeDamage : MonoBehaviour
 	{
 	    if (collision.CompareTag("Enemy"))
 	    {
-        Debug.Log("Hit");
 	    	Enemy enemy = collision.GetComponent<Enemy>();
 	    	enemy.Damage(damageAmount);
 	    }
