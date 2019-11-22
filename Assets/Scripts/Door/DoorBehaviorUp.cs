@@ -9,6 +9,7 @@ public class DoorBehaviorUp : MonoBehaviour
 	public bool locked = false;
 	public Sprite lockedSprite;
 	public Sprite openSprite;
+	public Vector3 EnemySpawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,11 @@ public class DoorBehaviorUp : MonoBehaviour
 				other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y+12, 0);
 				MainCamera.transform.Translate(0,26,0);
 		}
+		GameObject Enemy = EnemyPooler.SharedInstance.GetPooledEnemy();
+		if(Enemy != null){
+		       		Enemy.transform.position = EnemySpawn;
+		       		Enemy.SetActive(true);
+      		}
 
 	}
 }
