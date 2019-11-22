@@ -10,6 +10,8 @@ public class CollectAlien: MonoBehaviour
     ScoreAdder scoreAdder;
     GameObject timer;
     TimerText timerText;
+    public int alienScore = 50;
+    public int timerScore = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +32,8 @@ public class CollectAlien: MonoBehaviour
      void OnTriggerEnter2D(Collider2D other){
      	if(other.gameObject.name == "Player"){ // Only Player
      		alienCollection.Collect(); // Increment Alien
-            scoreAdder.score += 50;
-            timerText.seconds += 20;
+            scoreAdder.score += alienScore;
+            timerText.seconds += timerScore;
      		Destroy(gameObject); // Remove current Object
      	}
      }

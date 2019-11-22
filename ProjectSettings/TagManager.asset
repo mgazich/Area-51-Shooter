@@ -8,6 +8,7 @@ TagManager:
   - Alien
   - Wall
   - Ground
+  - PauseMenu
   layers:
   - Default
   - TransparentFX
