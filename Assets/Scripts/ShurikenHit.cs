@@ -28,7 +28,9 @@ public class ShurikenHit : MonoBehaviour
         if (collision.CompareTag("Enemy"))
 	    {
 	    	Enemy enemy = collision.GetComponent<Enemy>();
+            EnemyMovement enemyMov = collision.GetComponent<EnemyMovement>();
 	    	enemy.Damage(damageAmount);
+            enemyMov.damaged = true;
 			Destroy(gameObject);
 	    }
 
