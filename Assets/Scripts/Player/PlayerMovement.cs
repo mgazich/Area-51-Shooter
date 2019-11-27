@@ -4,7 +4,7 @@ using UnityEngineInternal.Input;
 
 public class PlayerMovement : MonoBehaviour
 {
-	public float speed = 15.0f;
+	public float speed = 10.0f;
 	public bool smooth;
     private Vector3 input;
 
