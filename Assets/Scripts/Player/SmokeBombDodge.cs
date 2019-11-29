@@ -39,7 +39,7 @@ public class SmokeBombDodge : MonoBehaviour
 	{
 		float temp = playerMovement.speed;
 		playerMovement.speed = 0.0f;
-		yield return new WaitForSeconds(.001f);
+		yield return new WaitForSeconds(.000001f);
 		playerMovement.speed = temp;
 	}
 	

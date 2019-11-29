@@ -25,7 +25,7 @@ public class ThrowShuriken : MonoBehaviour
 			shootDirection.z = 0.0f;
 			shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
 			shootDirection = shootDirection-transform.position;
-      if (Input.GetButton ("Fire1") && Time.time > nextFire && WeaponGun.isStar == true)
+      if (Input.GetButton ("Fire1") && Time.time > nextFire && WeaponGun.isStar == true && (shootDirection.x != 0 || shootDirection.y != 0))
 			{
 				nextFire = Time.time + fireRate;
 				shoot();
