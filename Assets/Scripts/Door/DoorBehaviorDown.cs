@@ -6,6 +6,7 @@ using UnityEngine;
 public class DoorBehaviorDown : MonoBehaviour
 {
 	GameObject MainCamera;
+	GridMap grid;	
 	public bool locked = false;
 	public Sprite lockedSprite;
 	public Sprite openSprite;
@@ -14,6 +15,7 @@ public class DoorBehaviorDown : MonoBehaviour
     void Start()
     {
        MainCamera = GameObject.Find("Camera");
+       grid = MainCamera.GetComponent<GridMap>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class DoorBehaviorDown : MonoBehaviour
 
 		if(other.gameObject.name == "Player" && !locked)
 		{
+				grid.y--;
 				other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y-12, 0);
 				MainCamera.transform.Translate(0,-26,0);
 		}

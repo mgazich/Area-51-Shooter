@@ -6,6 +6,7 @@ using UnityEngine;
 public class DoorBehaviorLeft : MonoBehaviour
 {
 	GameObject MainCamera;
+	GridMap grid;	
 	public bool locked = false;
 	public Sprite lockedSprite;
 	public Sprite openSprite;
@@ -14,6 +15,7 @@ public class DoorBehaviorLeft : MonoBehaviour
     void Start()
     {
        MainCamera = GameObject.Find("Camera");
+       grid = MainCamera.GetComponent<GridMap>();
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class DoorBehaviorLeft : MonoBehaviour
 
 		if(other.gameObject.name == "Player" && !locked)
 		{
-
+				grid.x--;
 				other.transform.position = new Vector3(other.transform.position.x-12, other.transform.position.y, 0);
 				MainCamera.transform.Translate(-29,0,0);
 		}

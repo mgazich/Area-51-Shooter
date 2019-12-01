@@ -6,6 +6,7 @@ using UnityEngine;
 public class DoorBehaviorRight : MonoBehaviour
 {
 	GameObject MainCamera;
+	GridMap grid;	
 	public bool locked = false;
 	public Sprite lockedSprite;
 	public Sprite openSprite;
@@ -14,6 +15,7 @@ public class DoorBehaviorRight : MonoBehaviour
     void Start()
     {
        MainCamera = GameObject.Find("Camera");//Gets Camera Object from scene
+       grid = MainCamera.GetComponent<GridMap>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class DoorBehaviorRight : MonoBehaviour
 
 		if(other.gameObject.name == "Player" && !locked)//Activate only for player collision
 		{
+				grid.x++;
 				other.transform.position = new Vector3(other.transform.position.x+12, other.transform.position.y, 0);//Moves the player 12 units to the right
 				MainCamera.transform.Translate(29,0,0);//Moves camera 29 units to the right
 		}

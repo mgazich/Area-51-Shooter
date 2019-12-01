@@ -23,7 +23,7 @@ public class EnemyPooler : MonoBehaviour
     	}
     }
     public GameObject GetPooledEnemy(){
-    	for(int i = 0; i < pooledEnemys.Count;i++){
+    	for(int i = 0; i < amountToPool;i++){
     	    if(!pooledEnemys[i].activeInHierarchy){
     	    	return pooledEnemys[i];
     	    }
