@@ -62,15 +62,21 @@ public class Roomsetup : MonoBehaviour
 				Enemy4.SetActive(true);
 				Enemy4.transform.position = new Vector3(MainCamera.transform.position.x - range,MainCamera.transform.position.y - range,0);
 			}
-
-				
-				
-				
-		       		
-		       		
+			SpawnGrid[x,y] = -1;
 		}
 		if(SpawnGrid[x,y] == 2){
-		
+			range = 2;
+			Enemy1 = EnemyPooler.SharedInstance.GetPooledEnemy();
+			if(Enemy1 != null){
+				Enemy1.SetActive(true);
+				Enemy1.transform.position = new Vector3(MainCamera.transform.position.x + range,MainCamera.transform.position.y + range,0);
+			}
+			Enemy2 = EnemyPooler.SharedInstance.GetPooledEnemy();
+			if(Enemy2 != null){
+				Enemy2.SetActive(true);
+				Enemy2.transform.position = new Vector3(MainCamera.transform.position.x + range,MainCamera.transform.position.y - range,0);
+			}
+			SpawnGrid[x,y] = -1;
 		}
 		if(SpawnGrid[x,y] == 3){
 		
