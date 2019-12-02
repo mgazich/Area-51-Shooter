@@ -9,6 +9,8 @@ public class PlayerMelee : MonoBehaviour
         public GameObject weaponSwap;
 	public WeaponSwap WeaponGun;
         public float attackRange; //changeable range
+        private float slashRate = 1.5f;
+      	public float nextSlash = 0f;
         // Start is called before the first frame update
         void Start()
         {
@@ -19,14 +21,15 @@ public class PlayerMelee : MonoBehaviour
 			attackRange = 2; //range intitally 2
 			attack.SetActive(false); // disappear
         }
-    
+
         // Update is called once per frame
         void Update()
-        {	
+        {
 				//if distance < range
-			if(Input.GetButton("Fire1") && WeaponGun.isStar == false)
+			if(Input.GetButton("Fire1") && WeaponGun.isStar == false && Time.time > nextSlash)
 			{
-				StartCoroutine( ShowAndHide(attack, 0.5f) );	
+        nextSlash = Time.time + slashRate;
+				StartCoroutine( ShowAndHide(attack, 0.5f) );
 			}
     	}
     	//function to handle timing
