@@ -29,7 +29,7 @@ public class PlayerMelee : MonoBehaviour
 			if(Input.GetButton("Fire1") && WeaponGun.isStar == false && Time.time > nextSlash)
 			{
         nextSlash = Time.time + slashRate;
-				StartCoroutine( ShowAndHide(attack, 0.5f) );
+				StartCoroutine( ShowAndHide(attack, 0.25f) );
 			}
     	}
     	//function to handle timing
