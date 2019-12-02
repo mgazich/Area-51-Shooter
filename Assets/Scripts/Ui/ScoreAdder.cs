@@ -8,7 +8,7 @@ public class ScoreAdder : MonoBehaviour
     public int score;
 
     Text text;
-	
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class ScoreAdder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		Score s = Score.instance;
+		    Score s = Score.instance;
         text.text = ("Score: " + s.score);
     }
 }

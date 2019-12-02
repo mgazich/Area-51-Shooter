@@ -12,7 +12,8 @@ public class CollectAlien: MonoBehaviour
     TimerText timerText;
     public int alienScore = 50;
     public int timerScore = 20;
-	Score s = Score.instance;
+    Score s;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class CollectAlien: MonoBehaviour
         scoreAdder = scoreSprite.GetComponent<ScoreAdder>();
         timer = GameObject.Find("Canvas/Timer");
         timerText = timer.GetComponent<TimerText>();
+        s = Score.instance;
     }
 
     // Update is called once per frame
