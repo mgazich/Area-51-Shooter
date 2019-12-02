@@ -8,13 +8,15 @@ public class Enemy : MonoBehaviour
     float maxHealth;
     GameObject scoreSprite;
     ScoreAdder scoreAdder;
-	Score s = Score.instance;
+    public bool alive;
+	  Score s = Score.instance;
     // Update is called once per frame
     private void Start()
     {
         scoreSprite = GameObject.Find("Canvas/Score");
         scoreAdder = scoreSprite.GetComponent<ScoreAdder>();
         maxHealth = health;
+        alive = false;
     }
     void Update()
     {
@@ -28,6 +30,7 @@ public class Enemy : MonoBehaviour
         if(health <= 0)
         {
             s.score += 10;
+            alive = false;
             gameObject.SetActive(false);
             health = maxHealth;
         }

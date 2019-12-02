@@ -15,7 +15,7 @@ public class TimerText : MonoBehaviour
     {
 		text = GetComponent<Text>();//Gets Text component from Timer object in scene
 		minutes = 0;
-		seconds = 45;//Initialize amount of time
+		seconds = 59;//Initialize amount of time
     }
 
 	void awake()

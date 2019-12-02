@@ -11,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
     public bool damaged = false;
     public float stunTime = 0.10f;
     public Sprite damagedSprite, normalSprite;
+    Enemy enemy;
 
     void Start()
     {
@@ -20,11 +21,14 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        enemy = gameObject.GetComponent<Enemy>();
         StartCoroutine(movement());
     }
 
     IEnumerator movement()
     {
+        enemy.alive = true;
+
         if (damaged)
         {
             GetComponent<SpriteRenderer>().sprite = damagedSprite;
