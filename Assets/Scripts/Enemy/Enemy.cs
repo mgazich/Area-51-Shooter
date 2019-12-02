@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float health;
     GameObject scoreSprite;
     ScoreAdder scoreAdder;
+	Score s = Score.instance;
     // Update is called once per frame
     private void Start()
     {
@@ -24,7 +25,7 @@ public class Enemy : MonoBehaviour
 
         if(health <= 0)
         {
-            scoreAdder.score += 10;
+            s.score += 10;
             gameObject.SetActive(false);
         }
     }

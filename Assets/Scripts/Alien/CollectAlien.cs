@@ -12,10 +12,10 @@ public class CollectAlien: MonoBehaviour
     TimerText timerText;
     public int alienScore = 50;
     public int timerScore = 20;
+	Score s = Score.instance;
     // Start is called before the first frame update
     void Start()
     {
-
         AlienSprite = GameObject.Find("Canvas/AlienCollection"); // Find AlienCollection
         alienCollection = AlienSprite.GetComponent<AlienCollection>(); // Set alienCollection to the found gameObject
         scoreSprite = GameObject.Find("Canvas/Score");
@@ -32,7 +32,7 @@ public class CollectAlien: MonoBehaviour
      void OnTriggerEnter2D(Collider2D other){
      	if(other.gameObject.name == "Player"){ // Only Player
      		alienCollection.Collect(); // Increment Alien
-            scoreAdder.score += alienScore;
+            s.score += alienScore;
             timerText.seconds += timerScore;
      		Destroy(gameObject); // Remove current Object
      	}
