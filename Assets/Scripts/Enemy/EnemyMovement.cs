@@ -10,12 +10,11 @@ public class EnemyMovement : MonoBehaviour
     public float enemySpeed = 3.0f; //Adjust float as needed. Higher numbers = faster
     public bool damaged = false;
     public float stunTime = 0.10f;
-    Sprite damagedSprite, normalSprite;
+    public Sprite damagedSprite, normalSprite;
 
     void Start()
     {
-        damagedSprite = Resources.Load<Sprite>("Assets/Sprites/MEATBALL_ALERT.png");
-        normalSprite = Resources.Load<Sprite>("Assets/Sprites/MEATBALL.png");
+
     }
 
     // Update is called once per frame

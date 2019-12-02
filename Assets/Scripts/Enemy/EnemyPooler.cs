@@ -8,7 +8,7 @@ public class EnemyPooler : MonoBehaviour
     public GameObject EnemyToPool;
     public int amountToPool;
     public static EnemyPooler SharedInstance;
-    
+
     void Awake(){
     	SharedInstance = this;
     }

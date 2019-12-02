@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health;
+    float maxHealth;
     GameObject scoreSprite;
     ScoreAdder scoreAdder;
 	Score s = Score.instance;
@@ -13,10 +14,11 @@ public class Enemy : MonoBehaviour
     {
         scoreSprite = GameObject.Find("Canvas/Score");
         scoreAdder = scoreSprite.GetComponent<ScoreAdder>();
+        maxHealth = health;
     }
     void Update()
     {
-        
+
     }
 
    public void Damage(float amount)
@@ -27,6 +29,7 @@ public class Enemy : MonoBehaviour
         {
             s.score += 10;
             gameObject.SetActive(false);
+            health = maxHealth;
         }
     }
 }
