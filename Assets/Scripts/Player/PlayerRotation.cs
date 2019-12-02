@@ -1,12 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-/// <summary>
-/// Manages player rotation based on mouse position.
-/// </summary>
-/// <remarks>
-///	Requires the original player image to face right.
-/// </remarks>
 public class PlayerRotation : MonoBehaviour
 {
 	public float speed = 5;
@@ -40,23 +34,4 @@ public class PlayerRotation : MonoBehaviour
 	}
 }
 
-/// <summary>
-/// A custom editor for <c>PlayerRotation</c> that disables the (meaningless) <c>speed</c> when <c>instant</c> is set to true. 
-/// </summary>
 
-    
-[CustomEditor(typeof(PlayerRotation))]
-public class PlayerRotationEditor : Editor
-{
-	public override void OnInspectorGUI()
-	{
-		var script = target as PlayerRotation;
-		Debug.Assert(script != null);
-
-		if (script.instant) GUI.enabled = false;
-		script.speed = EditorGUILayout.FloatField("Speed", script.speed);
-		GUI.enabled = true;
-
-		script.instant = EditorGUILayout.Toggle("Instant", script.instant);
-	}
-}
