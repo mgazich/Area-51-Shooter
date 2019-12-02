@@ -11,6 +11,7 @@ public class ThrowShuriken : MonoBehaviour
 	public float nextFire = 0f;
 	public GameObject gun;
 	public WeaponSwap WeaponGun;
+    public AudioSource shurikenSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,7 @@ public class ThrowShuriken : MonoBehaviour
 		Rigidbody2D rb = shurikenInitial.GetComponent<Rigidbody2D>();
 		rb.velocity = new Vector2((shootDirection.x), (shootDirection.y)).normalized;
 		rb.velocity = rb.velocity * shurikenSpeed;
+        shurikenSound.Play();
 
 	}
 
