@@ -15,7 +15,7 @@ public class Roomsetup : MonoBehaviour
 	// 4| x 1 1 1 x x 1
 	// 3| x 1 2 4 3 x 2 
 	// 2| x 2 3 4 3 4 2
-	// 1| 1 1 x x x s 1 1
+	// 1| 1 1 x 1 x s 1 1
 	// 0| x 2 1 1 1 s x 
 	// y ___________________
 	//  x 0 1 2 3 4 5 6 7 
@@ -31,8 +31,8 @@ public class Roomsetup : MonoBehaviour
 	{
 	MainCamera = GameObject.Find("Camera");
      		SpawnGrid = new int[8,6];
-		SpawnGrid[0,1] = SpawnGrid[1,1] = SpawnGrid[1,3] = SpawnGrid[1,4] = SpawnGrid[2,0] = SpawnGrid[2,4] = SpawnGrid[3,0] = SpawnGrid[3,4] = SpawnGrid[4,0] = SpawnGrid[6,1] = SpawnGrid[6,4] =  SpawnGrid[7,1] = 1;
-		SpawnGrid[1,2] = SpawnGrid[1,0] = SpawnGrid[2,3] = SpawnGrid[6,2] = SpawnGrid[6,3] = 2;
+		SpawnGrid[0,1] = SpawnGrid[1,1] = SpawnGrid[1,3] = SpawnGrid[1,4] = SpawnGrid[2,0] = SpawnGrid[2,4] = SpawnGrid[3,0] = SpawnGrid[3,4] = SpawnGrid[4,0] = SpawnGrid[6,1] = SpawnGrid[6,4] =  SpawnGrid[7,1] = SpawnGrid[3,1] = 1;
+		SpawnGrid[1,2] = SpawnGrid[1,0] = SpawnGrid[2,3] = SpawnGrid[6,2] = SpawnGrid[6,3] = SpawnGrid[5,0] = SpawnGrid[5,1] =2;
 		SpawnGrid[2,2] = SpawnGrid[4,2] = SpawnGrid[4,3] = 3;
 		SpawnGrid[3,2] = SpawnGrid[3,3] = SpawnGrid[5,2] = 4;
      	}
